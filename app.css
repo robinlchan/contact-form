@@ -1,0 +1,28 @@
+:root {
+  /* Colors */
+  --primary-light: hsl(148, 38%, 91%);
+  --primary-medium: hsl(169, 82%, 27%);
+  --primary-red: hsl(0, 66%, 54%);
+  --neutrals-white: hsl(0, 0%, 100%);
+  --neutrals-grey-md: hsl(186, 15%, 59%);
+  --neutrals-grey-dark: hsl(187, 24%, 22%);
+  /* Font */
+  --font-family: "Karla", serif;
+  --font-size-labels: 16px;
+  --font-weight-light: 400;
+  --font-weight-normal: 700;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
