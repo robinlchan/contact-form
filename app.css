@@ -7,22 +7,186 @@
   --neutrals-grey-md: hsl(186, 15%, 59%);
   --neutrals-grey-dark: hsl(187, 24%, 22%);
   /* Font */
-  --font-family: "Karla", serif;
+  --font-family: "Karla", sans-serif;
   --font-size-labels: 16px;
   --font-weight-light: 400;
   --font-weight-normal: 700;
+  /* SPACING */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 5rem;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--primary-light);
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-light);
+  color: var(--neutrals-grey-dark);
+  letter-spacing: 0.01rem;
+}
+
+main {
   width: 100%;
+  padding: var(--spacing-lg) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 0 0 var(--spacing-sm) 0;
+}
+
+label {
+  display: block;
+  padding: var(--spacing-xs) 0;
+  color: var(--primary-dark);
+  font-size: 15px;
+}
+
+label > span {
+  color: var(--primary-medium);
+}
+
+div {
+  padding: 0 0 var(--spacing-xs) 0;
+}
+
+.btn-container {
+  padding: var(--spacing-md) 0 0 0;
+}
+
+button {
+  width: 100%;
+  padding: var(--spacing-sm) 0;
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--neutrals-white);
+  background-color: var(--primary-medium);
+  letter-spacing: 0.05rem;
+}
+
+button:hover {
+  background-color: var(--neutrals-grey-dark);
+  cursor: pointer;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: left;
+  background-color: var(--neutrals-white);
+  width: 600px;
+  height: 80%;
+  padding: var(--spacing-md);
+  border-radius: 1rem;
 }
+
+input[type="text"] {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  border: 0.5px solid var(--neutrals-grey-md);
+  padding: var(--spacing-xs) calc(var(--spacing-xs) * 2);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-light);
+  font-size: 16px;
+  letter-spacing: 0.01rem;
+  color: var(--neutrals-grey-dark);
+}
+
+input[type="text"]:hover {
+  border: 1.5px solid var(--primary-medium);
+  cursor: pointer;
+}
+
+#message {
+  height: 7rem;
+  width: 100%;
+  border: 0.5px solid var(--neutrals-grey-md);
+  border-radius: 0.5rem;
+  padding: calc(var(--spacing-xs) * 2);
+  resize: none;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-light);
+  font-size: 16px;
+  letter-spacing: 0.01rem;
+  color: var(--neutrals-grey-dark);
+}
+
+#message:hover {
+  border: 1.5px solid var(--primary-medium);
+  cursor: pointer;
+}
+
+#message:focus,
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid var(--primary-medium);
+}
+
+/* #message,
+input[type="text"] {
+  border: 1.5px solid var(--primary-red);
+} */
+/* when error-messages are active */
+
+.checkbox {
+  display: flex;
+  padding: var(--spacing-sm) 0 0 0;
+  gap: var(--spacing-xs);
+}
+
+.flex-row {
+  display: flex;
+  width: 100%;
+  gap: var(--spacing-xs);
+}
+
+.flex-row > div {
+  width: 50%;
+}
+
+.radio-container {
+  display: flex;
+  gap: var(--spacing-xs);
+  justify-content: space-between;
+  width: 100%;
+}
+
+.radio-container .radio-button {
+  display: flex;
+  gap: var(--spacing-xs);
+  width: 50%;
+  border: 1px solid var(--neutrals-grey-md);
+  border-radius: 0.5rem;
+  padding: var(--spacing-xs) calc(var(--spacing-xs) * 2);
+}
+
+.radio-container label,
+.radio-container,
+#radio1,
+#radio2:hover {
+  cursor: pointer;
+}
+
+.error-message {
+  display: none;
+}
+
+/* .error-message {
+  display: block;
+  color: var(--primary-red);
+  font-size: 14px;
+  padding: 0;
+  margin-top: var(--spacing-sm);
+} */

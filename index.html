@@ -15,58 +15,64 @@
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="app.css" />
     <title>Contact Form</title>
   </head>
   <body>
-    <section class="contact">
+    <main>
       <form action="" id="contactForm" class="contact-form">
         <h1>Contact Us</h1>
-        <div class="flex-row">
+        <div class="flex-row name">
           <div class="first-name">
-            <label for="first">First Name</label>
+            <label for="first">First Name <span>*</span></label>
             <input type="text" id="first" required />
             <p id="first-error" class="error-message">This field is required</p>
           </div>
           <div class="last-name">
-            <label for="last">Last Name</label>
+            <label for="last">Last Name <span>*</span></label>
             <input type="text" id="last" required />
             <p id="last-error" class="error-message">This field is required</p>
           </div>
         </div>
         <div class="email-address">
-          <label for="email">Email Address</label>
+          <label for="email">Email Address <span>*</span></label>
           <input type="text" id="email" required />
           <p id="email-error" class="error-message">
             Please enter a valid email address
           </p>
         </div>
-        <div class="flex-row">
-          <label for="query">Query Type</label>
-          <input type="radio" id="radio1" />
-          <label for="radio1">General Enquiry</label>
-          <input type="radio" id="radio2" />
-          <label for="radio2">Support Request</label>
-          <p id="query-error" class="error-message">
-            Please select a query type
-          </p>
+        <label for="query" class="query">Query Type <span>*</span></label>
+        <div class="radio-container">
+          <div class="radio-button">
+            <input type="radio" id="radio1" />
+            <label for="radio1">General Enquiry</label>
+          </div>
+          <div class="radio-button">
+            <input type="radio" id="radio2" />
+            <label for="radio2">Support Request</label>
+          </div>
         </div>
+        <p id="query-error" class="error-message">Please select a query type</p>
         <div class="message-container">
-          <label for="message">Message</label>
-          <input type="text" id="message" required />
+          <label for="message">Message <span>*</span></label>
+          <textarea name="message" id="message"></textarea>
           <p id="message-error" class="error-message">This field is required</p>
         </div>
         <div class="checkbox">
           <input type="checkbox" id="check" required />
-          <label for="check">I consent to being contacted by the team</label>
-          <p id="checkbox-error" class="error-message">
-            To submit this form, please consent to being contacted
-          </p>
+          <label for="check"
+            >I hereby consent to being contacted by the team
+            <span>*</span></label
+          >
         </div>
+        <p id="checkbox-error" class="error-message">
+          To submit this form, please consent to being contacted
+        </p>
         <div class="btn-container">
           <button>Submit</button>
         </div>
         <!-- Alert on success = "Message Sent! Thanks for completing the form. We'll be in touch soon!" -->
       </form>
-    </section>
+    </main>
   </body>
 </html>
