@@ -96,6 +96,7 @@ form {
   border-radius: 1rem;
 }
 
+input[type="email"],
 input[type="text"] {
   width: 100%;
   height: 2.5rem;
@@ -109,9 +110,17 @@ input[type="text"] {
   color: var(--neutrals-grey-dark);
 }
 
+input[type="email"]:hover,
 input[type="text"]:hover {
-  border: 1.5px solid var(--primary-medium);
+  border: 2px solid var(--primary-medium);
   cursor: pointer;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border: 2px solid var(--primary-medium);
+  cursor: text;
 }
 
 #message {
@@ -129,14 +138,13 @@ input[type="text"]:hover {
 }
 
 #message:hover {
-  border: 1.5px solid var(--primary-medium);
-  cursor: pointer;
+  border: 2px solid var(--primary-medium);
 }
 
 #message:focus,
 input[type="text"]:focus {
   outline: none;
-  border: 1px solid var(--primary-medium);
+  border: 2px solid var(--primary-medium);
 }
 
 /* #message,
@@ -151,6 +159,10 @@ input[type="text"] {
   gap: var(--spacing-xs);
   accent-color: var(--primary-medium);
 }
+
+/* .checkbox:not(:checked) ~ .error-message {
+  display: none;
+} */
 
 .flex-row {
   display: flex;
@@ -186,21 +198,17 @@ input[type="text"] {
 }
 
 #radio1,
-#radio2 {
+#radio2:checked {
   accent-color: var(--primary-medium);
 }
 
 .error-message {
   display: none;
-}
-
-/* .error-message {
-  display: block;
   color: var(--primary-red);
   font-size: 14px;
   padding: 0;
   margin-top: var(--spacing-sm);
-} */
+}
 
 .alert-box {
   /* display: block; */

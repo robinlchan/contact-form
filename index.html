@@ -25,41 +25,44 @@
         <div class="flex-row name">
           <div class="first-name">
             <label for="first">First Name <span>*</span></label>
-            <input type="text" id="first" required />
+            <input type="text" id="first" />
             <p id="first-error" class="error-message">This field is required</p>
           </div>
           <div class="last-name">
             <label for="last">Last Name <span>*</span></label>
-            <input type="text" id="last" required />
+            <input type="text" id="last" />
             <p id="last-error" class="error-message">This field is required</p>
           </div>
         </div>
         <div class="email-address">
           <label for="email">Email Address <span>*</span></label>
-          <input type="text" id="email" required />
-          <p id="email-error" class="error-message">
-            Please enter a valid email address
-          </p>
+          <input type="email" id="email" />
+          <p id="email-error" class="error-message"></p>
         </div>
         <label for="query" class="query">Query Type <span>*</span></label>
         <div class="radio-container">
           <div class="radio-button">
-            <input type="radio" id="radio1" />
-            <label for="radio1">General Enquiry</label>
+            <input type="radio" id="radio1" name="radioB" />
+            <label for="radio1" id="radio-label">General Enquiry</label>
           </div>
           <div class="radio-button">
-            <input type="radio" id="radio2" />
-            <label for="radio2">Support Request</label>
+            <input type="radio" id="radio2" name="radioB" />
+            <label for="radio2" id="radio-label">Support Request</label>
           </div>
         </div>
         <p id="query-error" class="error-message">Please select a query type</p>
         <div class="message-container">
           <label for="message">Message <span>*</span></label>
-          <textarea name="message" id="message"></textarea>
+          <textarea
+            name="message"
+            id="message"
+            minlength="6"
+            maxlength="300"
+          ></textarea>
           <p id="message-error" class="error-message">This field is required</p>
         </div>
         <div class="checkbox">
-          <input type="checkbox" id="check" required />
+          <input type="checkbox" id="check" />
           <label for="check"
             >I hereby consent to being contacted by the team
             <span>*</span></label
@@ -82,5 +85,6 @@
         </div>
       </form>
     </main>
+    <script src="index.js"></script>
   </body>
 </html>
