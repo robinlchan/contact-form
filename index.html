@@ -20,26 +20,26 @@
   </head>
   <body>
     <main>
-      <form action="" id="contactForm" class="contact-form">
+      <form action="" id="contactForm" class="contact-form" novalidate required>
         <h1>Contact Us</h1>
         <div class="flex-row name">
           <div class="first-name">
             <label for="first">First Name <span>*</span></label>
-            <input type="text" id="first" />
-            <p id="first-error" class="error-message">This field is required</p>
+            <input type="text" id="first" autocapitalize="words" />
+            <span id="first-error" style="color: hsl(0, 66%, 54%)"></span>
           </div>
           <div class="last-name">
             <label for="last">Last Name <span>*</span></label>
-            <input type="text" id="last" />
-            <p id="last-error" class="error-message">This field is required</p>
+            <input type="text" id="last" autocapitalize="words" />
+            <span id="last-error" style="color: hsl(0, 66%, 54%)"></span>
           </div>
         </div>
         <div class="email-address">
           <label for="email">Email Address <span>*</span></label>
           <input type="email" id="email" />
-          <p id="email-error" class="error-message"></p>
+          <span id="email-error" style="color: hsl(0, 66%, 54%)"></span>
         </div>
-        <label for="query" class="query">Query Type <span>*</span></label>
+        <label for="" class="query">Query Type <span>*</span></label>
         <div class="radio-container">
           <div class="radio-button">
             <input type="radio" id="radio1" name="radioB" />
@@ -50,16 +50,15 @@
             <label for="radio2" id="radio-label">Support Request</label>
           </div>
         </div>
-        <p id="query-error" class="error-message">Please select a query type</p>
+        <span id="query-error" style="color: hsl(0, 66%, 54%)"></span>
         <div class="message-container">
           <label for="message">Message <span>*</span></label>
           <textarea
             name="message"
             id="message"
-            minlength="6"
-            maxlength="300"
+            autocapitalize="sentences"
           ></textarea>
-          <p id="message-error" class="error-message">This field is required</p>
+          <span id="message-error" style="color: hsl(0, 66%, 54%)"></span>
         </div>
         <div class="checkbox">
           <input type="checkbox" id="check" />
@@ -68,9 +67,7 @@
             <span>*</span></label
           >
         </div>
-        <p id="checkbox-error" class="error-message">
-          To submit this form, please consent to being contacted
-        </p>
+        <span id="checkbox-error" style="color: hsl(0, 66%, 54%)"></span>
         <div class="btn-container">
           <button>Submit</button>
         </div>

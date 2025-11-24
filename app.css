@@ -160,10 +160,6 @@ input[type="text"] {
   accent-color: var(--primary-medium);
 }
 
-/* .checkbox:not(:checked) ~ .error-message {
-  display: none;
-} */
-
 .flex-row {
   display: flex;
   width: 100%;
@@ -200,14 +196,6 @@ input[type="text"] {
 #radio1,
 #radio2:checked {
   accent-color: var(--primary-medium);
-}
-
-.error-message {
-  display: none;
-  color: var(--primary-red);
-  font-size: 14px;
-  padding: 0;
-  margin-top: var(--spacing-sm);
 }
 
 .alert-box {
