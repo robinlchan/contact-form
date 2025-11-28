@@ -147,12 +147,6 @@ input[type="text"]:focus {
   border: 2px solid var(--primary-medium);
 }
 
-/* #message,
-input[type="text"] {
-  border: 1.5px solid var(--primary-red);
-} */
-/* when error-messages are active */
-
 .checkbox {
   display: flex;
   padding: var(--spacing-sm) 0 0 0;
@@ -199,7 +193,6 @@ input[type="text"] {
 }
 
 .alert-box {
-  /* display: block; */
   display: none;
   position: fixed;
   top: 7%;

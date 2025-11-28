@@ -4,7 +4,8 @@ const alertBox = document.querySelector(".alert-box");
 const first = document.querySelector("#first");
 const last = document.querySelector("#last");
 const email = document.querySelector("#email");
-const radio = document.querySelectorAll("input[type='radio']");
+const radio1 = document.querySelector("#radio-general");
+const radio2 = document.querySelector("#radio-support");
 const message = document.querySelector("#message");
 const checkbox = document.querySelector("#check");
 
@@ -16,84 +17,55 @@ const msgError = document.getElementById("message-error");
 const checkboxError = document.getElementById("checkbox-error");
 
 form.addEventListener("submit", (e) => {
-  let hasError = false;
-
-  firstNameValid();
-  lastNameValid();
-  emailValid();
-  messageValid();
-  checkboxValid();
-  radioValid();
-  formSuccess();
-
-  function firstNameValid() {
-    if (first.value === "") {
-      e.preventDefault();
-      firstError.innerHTML = "This field is required";
-      first.style.border = "1px solid hsl(0, 66%, 54%)";
-      hasError = true;
-    } else {
-      firstError.innerHTML = "";
-      first.style.border = "";
-    }
+  if (first.value === "") {
+    e.preventDefault();
+    firstError.innerHTML = "This field is required";
+    first.style.border = "1px solid hsl(0, 66%, 54%)";
+  } else {
+    firstError.innerHTML = "";
+    first.style.border = "";
   }
-  function lastNameValid() {
-    if (last.value === "") {
-      e.preventDefault();
-      lastError.innerHTML = "This field is required";
-      last.style.border = "1px solid hsl(0, 66%, 54%)";
-      hasError = true;
-    } else {
-      lastError.innerHTML = "";
-      last.style.border = "";
-    }
+  if (last.value === "") {
+    e.preventDefault();
+    lastError.innerHTML = "This field is required";
+    last.style.border = "1px solid hsl(0, 66%, 54%)";
+  } else {
+    lastError.innerHTML = "";
+    last.style.border = "";
   }
-  function emailValid() {
-    if (email.value === "") {
-      e.preventDefault();
-      emailError.innerHTML = "Please enter a valid email address";
-      email.style.border = "1px solid hsl(0, 66%, 54%)";
-      hasError = true;
-    } else {
-      emailError.innerHTML = "";
-      email.style.border = "";
-    }
+  if (email.value === "") {
+    e.preventDefault();
+    emailError.innerHTML = "Please enter a valid email address";
+    email.style.border = "1px solid hsl(0, 66%, 54%)";
+  } else {
+    emailError.innerHTML = "";
+    email.style.border = "";
   }
-  function messageValid() {
-    if (message.value === "") {
-      e.preventDefault();
-      msgError.innerHTML = "This field is required";
-      message.style.border = "1px solid hsl(0, 66%, 54%)";
-      hasError = true;
-    } else {
-      msgError.innerHTML = "";
-      message.style.border = "";
-    }
+  if (message.value === "") {
+    e.preventDefault();
+    msgError.innerHTML = "This field is required";
+    message.style.border = "1px solid hsl(0, 66%, 54%)";
+  } else {
+    msgError.innerHTML = "";
+    message.style.border = "";
   }
-  function checkboxValid() {
-    if (checkbox.checked === false) {
-      e.preventDefault();
-      checkboxError.innerHTML =
-        "To submit this form, please consent to being contacted";
-      hasError = true;
-    } else {
-      checkboxError.innerHTML = "";
-    }
+  if (!radio1.checked && !radio2.checked) {
+    e.preventDefault();
+    radioError.innerHTML = "Please select a query below";
+  } else {
+    radioError.innerHTML = "";
   }
-  function radioValid() {
-    for (let i = 0; i < radio.length; i++) {
-      if (radio[i].checked) {
-        radioError.innerHTML = "";
-      } else {
-        e.preventDefault();
-        radioError.innerHTML = "Please select a query type";
-        hasError = true;
-      }
-    }
-  }
-  function formSuccess() {
-    if (hasError === false) {
-      alertBox.style.display = "block";
-    }
+  if (!checkbox.checked) {
+    e.preventDefault();
+    checkboxError.innerHTML =
+      "To submit this form, please consent to being contacted";
+  } else {
+    checkboxError.innerHTML = "";
+    e.preventDefault();
+    form.reset();
+    alertBox.style.display = "block";
+    setTimeout(function () {
+      alertBox.style.display = "none";
+    }, 5000);
   }
 });
