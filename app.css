@@ -8,7 +8,7 @@
   --neutrals-grey-dark: hsl(187, 24%, 22%);
   /* Font */
   --font-family: "Karla", sans-serif;
-  --font-size-labels: 16px;
+  --font-size-labels: 1rem;
   --font-weight-light: 400;
   --font-weight-normal: 700;
   /* SPACING */
@@ -90,7 +90,7 @@ button:hover {
 form {
   text-align: left;
   background-color: var(--neutrals-white);
-  width: 600px;
+  width: 37.5rem;
   height: 80%;
   padding: var(--spacing-md);
   border-radius: 1rem;
@@ -105,7 +105,7 @@ input[type="text"] {
   padding: var(--spacing-xs) calc(var(--spacing-xs) * 2);
   font-family: var(--font-family);
   font-weight: var(--font-weight-light);
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.01rem;
   color: var(--neutrals-grey-dark);
 }
@@ -132,7 +132,7 @@ textarea {
   resize: none;
   font-family: var(--font-family);
   font-weight: var(--font-weight-light);
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.01rem;
   color: var(--neutrals-grey-dark);
 }
@@ -198,7 +198,7 @@ input[type="radio"]:checked {
   transform: translate(-50%, -50%);
   background-color: var(--neutrals-grey-dark);
   color: var(--neutrals-white);
-  width: 350px;
+  width: 22rem;
   padding: var(--spacing-sm);
   border-radius: 0.7rem;
 }
@@ -206,14 +206,14 @@ input[type="radio"]:checked {
 .alert-header {
   margin: 0;
   padding: 0;
-  font-size: 12px;
+  font-size: 0.75rem;
   display: flex;
   justify-content: left;
   align-items: center;
 }
 
 .alert-body {
-  font-size: 11.5px;
+  font-size: 0.75rem;
   color: var(--neutrals-white);
   display: flex;
   justify-content: left;
