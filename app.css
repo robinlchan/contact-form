@@ -57,7 +57,7 @@ label {
   display: block;
   padding: var(--spacing-xs) 0;
   color: var(--primary-dark);
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 label > span {
@@ -123,7 +123,7 @@ input[type="text"]:focus {
   cursor: text;
 }
 
-#message {
+textarea {
   height: 7rem;
   width: 100%;
   border: 0.5px solid var(--neutrals-grey-md);
@@ -137,11 +137,11 @@ input[type="text"]:focus {
   color: var(--neutrals-grey-dark);
 }
 
-#message:hover {
+textarea:hover {
   border: 2px solid var(--primary-medium);
 }
 
-#message:focus,
+textarea:focus,
 input[type="text"]:focus {
   outline: none;
   border: 2px solid var(--primary-medium);
@@ -182,19 +182,17 @@ input[type="text"]:focus {
 
 .radio-container label,
 .radio-container,
-#radio1,
-#radio2:hover {
+input[type="radio"]:hover {
   cursor: pointer;
 }
 
-#radio1,
-#radio2:checked {
+input[type="radio"]:checked {
   accent-color: var(--primary-medium);
 }
 
 .alert-box {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 7%;
   left: 50%;
   transform: translate(-50%, -50%);
