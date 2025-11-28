@@ -26,18 +26,18 @@
           <div class="first-name">
             <label for="first">First Name <span>*</span></label>
             <input type="text" id="first" autocapitalize="words" />
-            <span id="first-error" style="color: hsl(0, 66%, 54%)"></span>
+            <span id="first-error" class="error-message"></span>
           </div>
           <div class="last-name">
             <label for="last">Last Name <span>*</span></label>
             <input type="text" id="last" autocapitalize="words" />
-            <span id="last-error" style="color: hsl(0, 66%, 54%)"></span>
+            <span id="last-error" class="error-message"></span>
           </div>
         </div>
         <div class="email-address">
           <label for="email">Email Address <span>*</span></label>
           <input type="email" id="email" />
-          <span id="email-error" style="color: hsl(0, 66%, 54%)"></span>
+          <span id="email-error" class="error-message"></span>
         </div>
         <label for="" class="query">Query Type <span>*</span></label>
         <div class="radio-container">
@@ -50,7 +50,7 @@
             <label for="radio-support" id="radio-label">Support Request</label>
           </div>
         </div>
-        <span id="query-error" style="color: hsl(0, 66%, 54%)"></span>
+        <span id="query-error" class="error-message"></span>
         <div class="message-container">
           <label for="message">Message <span>*</span></label>
           <textarea
@@ -58,7 +58,7 @@
             id="message"
             autocapitalize="sentences"
           ></textarea>
-          <span id="message-error" style="color: hsl(0, 66%, 54%)"></span>
+          <span id="message-error" class="error-message"></span>
         </div>
         <div class="checkbox">
           <input type="checkbox" id="check" />
@@ -67,9 +67,9 @@
             <span>*</span></label
           >
         </div>
-        <span id="checkbox-error" style="color: hsl(0, 66%, 54%)"></span>
+        <span id="checkbox-error" class="error-message"></span>
         <div class="btn-container">
-          <button>Submit</button>
+          <button type="submit">Submit</button>
         </div>
         <div class="alert-box">
           <div class="alert-header">

@@ -227,3 +227,7 @@ input[type="text"]:focus {
   margin: 0;
   color: var(--neutrals-grey-md);
 }
+
+.error-message {
+  color: var(--primary-red);
+}
