@@ -200,7 +200,7 @@ input[type="text"]:focus {
   transform: translate(-50%, -50%);
   background-color: var(--neutrals-grey-dark);
   color: var(--neutrals-white);
-  width: 35%;
+  width: 350px;
   padding: var(--spacing-sm);
   border-radius: 0.7rem;
 }
