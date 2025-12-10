@@ -191,7 +191,7 @@ input[type="radio"]:checked {
 }
 
 .alert-box {
-  display: none;
+  display: block;
   position: absolute;
   top: 7%;
   left: 50%;
@@ -228,4 +228,8 @@ input[type="radio"]:checked {
 
 .error-message {
   color: var(--primary-red);
+}
+
+.hidden {
+  display: none;
 }

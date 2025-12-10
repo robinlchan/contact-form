@@ -1,5 +1,4 @@
 const form = document.querySelector("#contactForm");
-const alertBox = document.querySelector(".alert-box");
 
 const first = document.querySelector("#first");
 const last = document.querySelector("#last");
@@ -8,6 +7,7 @@ const radio1 = document.querySelector("#radio-general");
 const radio2 = document.querySelector("#radio-support");
 const message = document.querySelector("#message");
 const checkbox = document.querySelector("#check");
+const allInputs = document.querySelectorAll("input, textarea");
 
 const firstError = document.getElementById("first-error");
 const lastError = document.getElementById("last-error");
@@ -17,55 +17,110 @@ const msgError = document.getElementById("message-error");
 const checkboxError = document.getElementById("checkbox-error");
 
 form.addEventListener("submit", (e) => {
-  if (first.value === "") {
-    e.preventDefault();
-    firstError.innerHTML = "This field is required";
-    first.style.border = "1px solid hsl(0, 66%, 54%)";
-  } else {
-    firstError.innerHTML = "";
-    first.style.border = "";
-  }
-  if (last.value === "") {
-    e.preventDefault();
-    lastError.innerHTML = "This field is required";
-    last.style.border = "1px solid hsl(0, 66%, 54%)";
-  } else {
-    lastError.innerHTML = "";
-    last.style.border = "";
-  }
-  if (email.value === "") {
-    e.preventDefault();
-    emailError.innerHTML = "Please enter a valid email address";
-    email.style.border = "1px solid hsl(0, 66%, 54%)";
-  } else {
-    emailError.innerHTML = "";
-    email.style.border = "";
-  }
-  if (message.value === "") {
-    e.preventDefault();
-    msgError.innerHTML = "This field is required";
-    message.style.border = "1px solid hsl(0, 66%, 54%)";
-  } else {
-    msgError.innerHTML = "";
-    message.style.border = "";
-  }
-  if (!radio1.checked && !radio2.checked) {
-    e.preventDefault();
-    radioError.innerHTML = "Please select a query below";
-  } else {
-    radioError.innerHTML = "";
-  }
-  if (!checkbox.checked) {
-    e.preventDefault();
-    checkboxError.innerHTML =
-      "To submit this form, please consent to being contacted";
-  } else {
-    checkboxError.innerHTML = "";
-    e.preventDefault();
-    form.reset();
-    alertBox.style.display = "block";
-    setTimeout(function () {
-      alertBox.style.display = "none";
-    }, 5000);
-  }
+  e.preventDefault();
+
+  validateInputs.validateFirst();
+  validateInputs.validateLast();
+  validateInputs.validateEmail();
+  validateInputs.validateMessage();
+  validateInputs.validateRadio();
+  validateInputs.validateCheckbox();
+  validateInputs.submitForm();
 });
+
+function showSuccess() {
+  const alertBox = document.querySelector(".alert-box");
+  alertBox.classList.remove("hidden");
+
+  setTimeout(() => {
+    alertBox.classList.add("hidden");
+  }, 4000);
+}
+
+function errorState(input) {
+  input.classList.add("error");
+  input.style.border = "1px solid hsl(0, 66%, 54%)";
+}
+
+function errorMsg(error, input) {
+  if (error === firstError || error === lastError || error === msgError) {
+    error.innerText = "This field is required";
+  } else if (error === emailError) {
+    error.innerText = "Please enter a valid email address";
+  } else if (error === radioError) {
+    error.innerText = "Please select a query below";
+  } else if (error === checkboxError) {
+    error.innerText = "To submit this form, please consent to being contacted";
+  }
+}
+
+function removeError(error, input) {
+  error.innerHTML = "";
+  input.classList.remove("error");
+  input.style.border = "";
+}
+
+const validateInputs = {
+  validateFirst() {
+    if (first.value === "") {
+      errorState(first);
+      errorMsg(firstError, first);
+    } else {
+      removeError(firstError, first);
+    }
+  },
+  validateLast() {
+    if (last.value === "") {
+      errorState(last);
+      errorMsg(lastError, last);
+    } else {
+      removeError(lastError, last);
+    }
+  },
+  validateEmail() {
+    if (email.value === "") {
+      errorState(email);
+      errorMsg(emailError, email);
+    } else {
+      removeError(emailError, email);
+    }
+  },
+  validateMessage() {
+    if (message.value === "") {
+      errorState(message);
+      errorMsg(msgError, message);
+    } else {
+      removeError(msgError, message);
+    }
+  },
+  validateRadio() {
+    if (!radio1.checked && !radio2.checked) {
+      radioError.innerHTML = "Please select a query below";
+      errorState(radio1);
+      errorMsg(radioError, radio1);
+      errorState(radio2);
+      errorMsg(radioError, radio2);
+    } else {
+      removeError(radioError, radio1);
+      removeError(radioError, radio2);
+    }
+  },
+  validateCheckbox() {
+    if (!checkbox.checked) {
+      errorState(checkbox);
+      errorMsg(checkboxError, checkbox);
+    } else {
+      removeError(checkboxError, checkbox);
+    }
+  },
+  submitForm() {
+    const allInputsArr = Array.from(allInputs);
+    const isValid = allInputsArr.every(
+      (input) => !input.classList.contains("error")
+    );
+    if (isValid) {
+      showSuccess();
+      form.reset();
+    }
+  },
+};
